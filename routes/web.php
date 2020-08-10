@@ -25,3 +25,4 @@ Route::delete('/proyek/{id}', 'ProyekController@destroy'); // menghapus data den
 
 
 Route::get('/karyawan', 'KaryawanController@index'); // menampilkan form untuk edit item
+Route::get('/karyawan/{id}/daftar-proyek', 'KaryawanController@proyek'); // menampilkan form untuk edit item
