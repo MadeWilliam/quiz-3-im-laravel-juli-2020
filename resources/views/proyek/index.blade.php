@@ -30,9 +30,9 @@
                                 <td>{{ $proyek->title }}</td>
                                 <td>{{ $proyek->content }}</td>
                                 <td style="display:flex">
-                                    <a href="/pertanyaan/{{$proyek->id}}" class="btn btn-info btn-sm">Show</a>
-                                    <a href="/pertanyaan/{{$proyek->id}}/edit" class="btn btn-default btn-sm">Edit</a>
-                                    <form action="/pertanyaan/{{$proyek->id}}" method="post">
+                                    <a href="/pertanyaan/{{ $proyek->id }}" class="btn btn-info btn-sm">Show</a>
+                                    <a href="/pertanyaan/{{ $proyek->id }}/edit" class="btn btn-default btn-sm">Edit</a>
+                                    <form action="/pertanyaan/{{ $proyek->id }}" method="post">
                                         @csrf
                                         @method('DELETE')
                                         <input type="submit" value="delete" class="btn btn-danger btn-sm">
@@ -49,4 +49,17 @@
             </div>
         </div>
     </div>
+
+    @push('scripts')
+
+        <script>
+            Swal.fire({
+                title: 'Berhasil!',
+                text: 'Memasangkan script sweet alert',
+                icon: 'success',
+                confirmButtonText: 'Cool'
+            })
+
+        </script>
+    @endpush
 @endsection

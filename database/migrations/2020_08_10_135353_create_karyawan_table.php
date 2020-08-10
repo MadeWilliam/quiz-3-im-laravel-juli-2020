@@ -18,15 +18,15 @@ class CreateKaryawanTable extends Migration
             $table->string('nama');
             $table->string('jabatan');
 
-            $table->timestamps();
-
+            
             $table->unsignedBigInteger('staff_id')->nullable();
             $table->unsignedBigInteger('manager_id')->nullable();
             $table->unsignedBigInteger('manager_staff_id')->nullable();
-
+            
             $table->foreign('staff_id')->references('id')->on('staff');
             $table->foreign('manager_id')->references('id')->on('manager');
             $table->foreign('manager_staff_id')->references('staff_id')->on('manager');
+            $table->timestamps();
         });
     }
     
